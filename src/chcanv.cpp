@@ -4807,7 +4807,7 @@ bool ChartCanvas::CheckEdgePan( int x, int y, bool bdragging, int margin, int de
         if( !g_btouch )
         {
             wxMouseState state = ::wxGetMouseState();
-            if( !state.LeftDown() )
+            if( !state.LeftIsDown() )
                 bft = false;
         }
     }
@@ -6642,7 +6642,7 @@ void ChartCanvas::CanvasPopupMenu( int x, int y, int seltype )
         {
             if( pimis->b_viz ) {
                 wxMenuItem *pmi = new wxMenuItem( contextMenu, pimis->id,
-                                                  pimis->pmenu_item->GetLabel(), pimis->pmenu_item->GetHelp(),
+                                                  pimis->pmenu_item->GetItemLabelText(), pimis->pmenu_item->GetHelp(),
                                                   pimis->pmenu_item->GetKind(), pimis->pmenu_item->GetSubMenu() );
 #ifdef __WXMSW__
                 pmi->SetFont(pimis->pmenu_item->GetFont());

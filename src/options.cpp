@@ -338,7 +338,7 @@ void MMSIEditDialog::CreateControls()
      
      wxStaticText* itemStaticText5 = new wxStaticText( itemDialog1, wxID_STATIC, _("MMSI") );
      itemStaticBoxSizer4->Add( itemStaticText5, 0,
-                               wxALIGN_LEFT | wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, 5 );
+                               wxALIGN_LEFT | wxLEFT | wxRIGHT | wxTOP, 5 );
      
      m_MMSICtl = new wxTextCtrl( itemDialog1, ID_MMSI_CTL, _T(""), wxDefaultPosition, wxSize( 180, -1 ), 0 );
      itemStaticBoxSizer4->Add( m_MMSICtl, 0,
@@ -1752,7 +1752,7 @@ void options::CreatePanel_VectorCharts( size_t parent, int border_size, int grou
 
     wxStaticText* itemStaticText4 = new wxStaticText( ps57Ctl, wxID_STATIC, _("Shallow Depth") );
     depthsSizer->Add( itemStaticText4, 0,
-            wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, group_item_spacing );
+            wxLEFT | wxRIGHT | wxTOP, group_item_spacing );
 
     m_ShallowCtl = new wxTextCtrl( ps57Ctl, ID_TEXTCTRL, _T(""), wxDefaultPosition,
             wxSize( 120, -1 ), 0 );
@@ -1761,7 +1761,7 @@ void options::CreatePanel_VectorCharts( size_t parent, int border_size, int grou
 
     wxStaticText* itemStaticText5 = new wxStaticText( ps57Ctl, wxID_STATIC, _("Safety Depth") );
     depthsSizer->Add( itemStaticText5, 0,
-            wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, group_item_spacing );
+            wxLEFT | wxRIGHT | wxTOP, group_item_spacing );
 
     m_SafetyCtl = new wxTextCtrl( ps57Ctl, ID_TEXTCTRL, _T(""), wxDefaultPosition,
             wxSize( 120, -1 ), 0 );
@@ -1770,7 +1770,7 @@ void options::CreatePanel_VectorCharts( size_t parent, int border_size, int grou
 
     wxStaticText* itemStaticText6 = new wxStaticText( ps57Ctl, wxID_STATIC, _("Deep Depth") );
     depthsSizer->Add( itemStaticText6, 0,
-            wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, group_item_spacing );
+            wxLEFT | wxRIGHT | wxTOP, group_item_spacing );
 
     m_DeepCtl = new wxTextCtrl( ps57Ctl, ID_TEXTCTRL, _T(""), wxDefaultPosition, wxSize( 120, -1 ),
             0 );
@@ -1962,7 +1962,7 @@ void options::CreatePanel_Display( size_t parent, int border_size, int group_ite
 
     wxStaticText* itemStaticTextCOGUPFilterSecs = new wxStaticText( pDisplayPanel, wxID_STATIC,
             _("Course-Up Mode Display Update Period (sec)") );
-    pCOGUPFilterGrid->Add( itemStaticTextCOGUPFilterSecs, 0, wxADJUST_MINSIZE,
+    pCOGUPFilterGrid->Add( itemStaticTextCOGUPFilterSecs, 0, 0,
                            group_item_spacing );
 
     pCOGUPUpdateSecs = new wxTextCtrl( pDisplayPanel, ID_TEXTCTRL, _T(""), wxDefaultPosition,
@@ -2043,7 +2043,7 @@ void options::CreatePanel_Display( size_t parent, int border_size, int group_ite
     
     wxStaticText* itemStaticTextUserVar = new wxStaticText( pDisplayPanel, wxID_STATIC,
                                                                     _("Assumed Magnetic Variation, deg.") );
-    pUserVarGrid->Add( itemStaticTextUserVar, 0, wxADJUST_MINSIZE,
+    pUserVarGrid->Add( itemStaticTextUserVar, 0, 0,
                        group_item_spacing );
     
     pMagVar = new wxTextCtrl( pDisplayPanel, ID_TEXTCTRL, _T(""), wxDefaultPosition,
@@ -2347,7 +2347,7 @@ void options::CreatePanel_UI( size_t parent, int border_size, int group_item_spa
     wxStaticText* itemStaticTextSDMMFormat = new wxStaticText( itemPanelFont, wxID_STATIC,
             _("Show Lat/Long as") );
     pFormatGrid->Add( itemStaticTextSDMMFormat, 0,
-            wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, border_size );
+            wxLEFT | wxRIGHT | wxTOP, border_size );
 
     wxString pSDMMFormats[] = { _("Degrees, Decimal Minutes"), _("Decimal Degrees"),
             _("Degrees, Minutes, Seconds") };
@@ -2359,7 +2359,7 @@ void options::CreatePanel_UI( size_t parent, int border_size, int group_item_spa
     wxStaticText* itemStaticTextDistanceFormat = new wxStaticText( itemPanelFont, wxID_STATIC,
             _("Show distance as") );
     pFormatGrid->Add( itemStaticTextDistanceFormat, 0,
-            wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, border_size );
+            wxLEFT | wxRIGHT | wxTOP, border_size );
 
     wxString pDistanceFormats[] = { _("Nautical miles"), _("Statute miles"),
             _("Kilometers"), _("Meters") };
@@ -2371,7 +2371,7 @@ void options::CreatePanel_UI( size_t parent, int border_size, int group_item_spa
     wxStaticText* itemStaticTextSpeedFormat = new wxStaticText( itemPanelFont, wxID_STATIC,
             _("Show speed as") );
     pFormatGrid->Add( itemStaticTextSpeedFormat, 0,
-            wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, border_size );
+            wxLEFT | wxRIGHT | wxTOP, border_size );
 
     wxString pSpeedFormats[] = { _("Knots"), _("Mph"),
             _("km/h"), _("m/s") };
@@ -5459,7 +5459,7 @@ OpenGLOptionsDlg::OpenGLOptionsDlg( wxWindow* parent )
         wxStaticText* stTextureMemorySize =
             new wxStaticText( this, wxID_STATIC, _("Texture Memory Size (MB)") );
         m_bSizer1->Add( stTextureMemorySize, 0,
-                wxLEFT | wxRIGHT | wxTOP | wxADJUST_MINSIZE, 5 );
+                wxLEFT | wxRIGHT | wxTOP, 5 );
 
         m_sTextureMemorySize = new wxSpinCtrl( this );
         m_sTextureMemorySize->SetRange(1, 16384 );

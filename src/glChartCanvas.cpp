@@ -685,8 +685,9 @@ BEGIN_EVENT_TABLE ( glChartCanvas, wxGLCanvas ) EVT_PAINT ( glChartCanvas::OnPai
 END_EVENT_TABLE()
 
 glChartCanvas::glChartCanvas( wxWindow *parent ) :
-    wxGLCanvas( parent, wxID_ANY, wxDefaultPosition, wxSize( 256, 256 ),
-                wxFULL_REPAINT_ON_RESIZE | wxBG_STYLE_CUSTOM, _T(""), attribs ),
+    wxGLCanvas( parent, wxID_ANY, attribs, wxDefaultPosition, wxSize( 256, 256 ), 
+                wxFULL_REPAINT_ON_RESIZE | wxBG_STYLE_CUSTOM, _T("")),
+
     m_data( NULL ), m_datasize( 0 ), m_bsetup( false )
 {
     SetBackgroundStyle ( wxBG_STYLE_CUSTOM );  // on WXMSW, this prevents flashing
@@ -762,7 +763,7 @@ void glChartCanvas::OnSize( wxSizeEvent& event )
     }
 
     // this is also necessary to update the context on some platforms
-    wxGLCanvas::OnSize( event );
+    //wxGLCanvas::OnSize( event );
 
     /* expand opengl widget to fill viewport */
     ViewPort &VP = cc1->GetVP();
